@@ -2,7 +2,10 @@
 
 Transform your command-line experience with our Ultimate Shell Enhancement Suite! Boost productivity and add a touch of elegance to your daily coding routine.
 
-![Shell Demo](placeholder_for_shell_demo.gif)
+![PowerShell Demo](photos/powershell.png)
+
+
+![Zsh Demo](photos/zsh.png)
 
 ## 🌟 Features
 
@@ -33,7 +36,7 @@ Supercharge your Linux/macOS terminal with:
 
 ## 🔮 Future Plans
 
-We're constantly working to expand our suite of shell enhancements, and best programming setup.
+We're constantly working to expand our suite of shell enhancements and best programming setups. Stay tuned for more exciting updates!
 
 ## 🚀 Quick Start
 
@@ -45,10 +48,5 @@ We're constantly working to expand our suite of shell enhancements, and best pro
 ## 🤝 Contributing
 
 We welcome contributions! If you have ideas for improvements or support for new shells, please open an issue or submit a pull request.
-
-## 📸 Screenshots
-
-[Placeholder for PowerShell Screenshot]
-[Placeholder for Zsh Screenshot]
 
 Upgrade your command-line interface today and code in style! 🎉
