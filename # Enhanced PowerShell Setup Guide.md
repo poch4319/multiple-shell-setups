@@ -15,7 +15,22 @@
    Install-Module PSReadLine -Force -SkipPublisherCheck
    ```
 
-## 3. Configure PowerShell
+## 3. Install Starship
+
+1. Open PowerShell 7 as Administrator
+2. Run the following command to install Starship:
+   ```powershell
+   winget install --id Starship.Starship
+   ```
+
+## 4. Install CascadiaMono Nerd Font
+
+1. Visit the Nerd Fonts website: https://www.nerdfonts.com/font-downloads
+2. Download the CascadiaMono Nerd Font
+3. Extract the ZIP file
+4. Right-click on each `.ttf` file and select "Install" to install the font
+
+## 5. Configure PowerShell
 
 1. Open your PowerShell profile for editing:
    ```powershell
@@ -24,28 +39,59 @@
 2. Replace the contents with the following configuration:
 
    ```powershell
-    Import-Module PSReadLine
+   Import-Module PSReadLine
 
-    # Enable predictive IntelliSense
-    Set-PSReadLineOption -PredictionSource History
+   # Enable predictive IntelliSense
+   Set-PSReadLineOption -PredictionSource History
 
-    # Optional: Change the view style to ListView (for a dropdown-like appearance)
-    Set-PSReadLineOption -PredictionViewStyle ListView
+   # Optional: Change the view style to ListView (for a dropdown-like appearance)
+   Set-PSReadLineOption -PredictionViewStyle ListView
 
-    # Optional: Change colors
-    Set-PSReadLineOption -Colors @{ InlinePrediction = "$([char]0x1b)[36;7;238m" }
+   # Optional: Change colors
+   Set-PSReadLineOption -Colors @{ InlinePrediction = "$([char]0x1b)[36;7;238m" }
 
-    # Optional: Use Ctrl+Space to accept the current suggestion
-    Set-PSReadLineKeyHandler -Chord "Ctrl+Spacebar" -Function AcceptSuggestion
+   # Optional: Use Ctrl+Space to accept the current suggestion
+   Set-PSReadLineKeyHandler -Chord "Ctrl+Spacebar" -Function AcceptSuggestion
+
+   # Apply starship theme when start
+   Invoke-Expression (&starship init powershell)
    ```
 
 3. Save the file and close Notepad
-4. Reload your profile:
+4. Create a new directory for Starship configuration:
+   ```powershell
+   New-Item -ItemType Directory -Path "$HOME\.starship" -Force
+   ```
+5. Create and edit the Starship configuration file:
+   ```powershell
+   notepad "$HOME\.starship\starship.toml"
+   ```
+6. Add the [Gruvbox Rainbow Preset](https://starship.rs/presets/gruvbox-rainbow) configuration in the file you just created
+
+7. Save the file and close Notepad
+
+8. Run the following command to apply the Gruvbox Rainbow preset:
+   ```powershell
+   starship preset gruvbox-rainbow -o ~/.config/starship.toml
+   ```
+
+9. Reload your profile:
    ```powershell
    . $PROFILE
    ```
 
-## 4. Verify Setup
+## 6. Configure Windows Terminal (if using)
+
+1. Open Windows Terminal
+2. Go to Settings (Ctrl+,)
+3. In the settings JSON file, find your PowerShell profile and add or modify the following:
+   ```json
+   "font": {
+       "face": "CaskaydiaCove Nerd Font"
+   }
+   ```
+
+## 7. Verify Setup
 
 1. Close and reopen PowerShell 7
 2. Check your PowerShell version:
@@ -53,8 +99,10 @@
    $PSVersionTable.PSVersion
    ```
    Ensure it shows version 7 or higher
+3. Verify Starship is working by checking if the prompt has changed
+4. Confirm that the CascadiaMono Nerd Font is being used (visually)
 
-## 5. Usage Guide
+## 8. Usage Guide
 
 - As you type, you'll see a dropdown list of suggestions based on your command history
 - Use arrow keys to navigate the suggestion list
@@ -62,6 +110,7 @@
 - Use Ctrl+F to accept the inline suggestion
 - Up/Down arrows will search through your command history
 - Alt+A cycles through command arguments for quick editing
+- Enjoy the enhanced prompt and icons provided by Starship
 
 ## Troubleshooting
 
@@ -80,5 +129,10 @@ If you encounter any issues:
    Uninstall-Module PSReadLine -AllVersions
    Install-Module PSReadLine -Force
    ```
+5. Verify Starship is installed:
+   ```powershell
+   starship --version
+   ```
+6. Ensure CascadiaMono Nerd Font is installed in your system's fonts
 
 Remember to restart PowerShell after making changes to see the effects.
