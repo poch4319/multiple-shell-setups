@@ -28,7 +28,7 @@
 1. Visit the Nerd Fonts website: https://www.nerdfonts.com/font-downloads
 2. Download the CascadiaMono Nerd Font
 3. Extract the ZIP file
-4. Right-click on each `.ttf` file and select "Install" to install the font
+4. Right-click on each (or select all) `.ttf` file and select "Install" to install the font
 
 ## 5. Configure PowerShell
 
