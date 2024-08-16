@@ -33,12 +33,7 @@ Supercharge your Linux/macOS terminal with:
 
 ## 🔮 Future Plans
 
-We're constantly working to expand our suite of shell enhancements. Stay tuned for:
-
-- 🐠 Fish shell configuration
-- 🍎 macOS-specific optimizations
-- 🐧 More Linux distributions support
-- 🧰 Additional productivity plugins and tools
+We're constantly working to expand our suite of shell enhancements, and best programming setup.
 
 ## 🚀 Quick Start
 
